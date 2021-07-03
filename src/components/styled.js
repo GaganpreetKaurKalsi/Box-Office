@@ -1,9 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const FlexGrid = styled.div`
-display : flex;
-justify-content : center;
-flex-wrap: wrap;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 `;
 
 export const SearchCards = styled.div`
@@ -30,4 +30,24 @@ export const SearchCards = styled.div`
     p {
         margin: 0;
     }
+`;
+
+export const Star = styled.div`
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    background-color: #ffc806;
+    background-color: ${props => props.active === 'active' ? '#ffc806' : '#b0b0b0'};
+    clip-path: polygon(
+        50% 0%,
+        61% 35%,
+        98% 35%,
+        68% 57%,
+        79% 91%,
+        50% 70%,
+        21% 91%,
+        32% 57%,
+        2% 35%,
+        39% 35%
+    );
 `;

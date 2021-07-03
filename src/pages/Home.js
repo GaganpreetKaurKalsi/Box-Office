@@ -42,6 +42,7 @@ const Home = () => {
             return <div>No results found</div>;
         }
         if (results && results.length > 0) {
+            console.log(results);
             return results[0].show ? <ShowGrid data={results} /> : <ActorGrid data={results}/>;
         }
         return null;
