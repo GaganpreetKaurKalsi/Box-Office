@@ -1,69 +1,73 @@
 {
-  "name": "box-office",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
-    "@testing-library/user-event": "^12.8.3",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-fade-in": "^2.0.1",
-    "react-router": "^5.2.0",
-    "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
-    "styled-components": "^5.3.0",
-    "web-vitals": "^0.2.4",
-    "workbox-background-sync": "^5.1.4",
-    "workbox-broadcast-update": "^5.1.4",
-    "workbox-cacheable-response": "^5.1.4",
-    "workbox-core": "^5.1.4",
-    "workbox-expiration": "^5.1.4",
-    "workbox-google-analytics": "^5.1.4",
-    "workbox-navigation-preload": "^5.1.4",
-    "workbox-precaching": "^5.1.4",
-    "workbox-range-requests": "^5.1.4",
-    "workbox-routing": "^5.1.4",
-    "workbox-strategies": "^5.1.4",
-    "workbox-streams": "^5.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "npm run clear && react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
-    "format": "prettier --write src/**/*.js",
-    "format:lint": "npm run format && npm run lint",
-    "clear": "rimraf build"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "eslint-config-airbnb": "^18.2.1",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.4",
-    "eslint-plugin-jsx-a11y": "^6.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "eslint-plugin-react-hooks": "^4.2.0",
-    "prettier": "^2.3.2",
-    "rimraf": "^3.0.2"
-  }
+    "homepage": "https://GaganpreetKaurKalsi.github.io/Box-Office",
+    "name": "box-office",
+    "version": "0.1.0",
+    "private": true,
+    "dependencies": {
+        "@testing-library/jest-dom": "^5.14.1",
+        "@testing-library/react": "^11.2.7",
+        "@testing-library/user-event": "^12.8.3",
+        "gh-pages": "^3.2.3",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-fade-in": "^2.0.1",
+        "react-router": "^5.2.0",
+        "react-router-dom": "^5.2.0",
+        "react-scripts": "4.0.3",
+        "styled-components": "^5.3.0",
+        "web-vitals": "^0.2.4",
+        "workbox-background-sync": "^5.1.4",
+        "workbox-broadcast-update": "^5.1.4",
+        "workbox-cacheable-response": "^5.1.4",
+        "workbox-core": "^5.1.4",
+        "workbox-expiration": "^5.1.4",
+        "workbox-google-analytics": "^5.1.4",
+        "workbox-navigation-preload": "^5.1.4",
+        "workbox-precaching": "^5.1.4",
+        "workbox-range-requests": "^5.1.4",
+        "workbox-routing": "^5.1.4",
+        "workbox-strategies": "^5.1.4",
+        "workbox-streams": "^5.1.4"
+    },
+    "scripts": {
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build",
+        "start": "react-scripts start",
+        "build": "npm run clear && react-scripts build",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "lint": "eslint src/**/*.js",
+        "format": "prettier --write src/**/*.js",
+        "format:lint": "npm run format && npm run lint",
+        "clear": "rimraf build"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-import": "^2.23.4",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-react": "^7.24.0",
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "prettier": "^2.3.2",
+        "rimraf": "^3.0.2"
+    }
 }
