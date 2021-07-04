@@ -11,6 +11,7 @@ const ShowGrid = ({ data }) => {
 
     return (
         <FlexGrid>
+
             {
                 data.map(({ show }) => {
                     console.log(show)
