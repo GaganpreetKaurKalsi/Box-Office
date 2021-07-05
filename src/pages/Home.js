@@ -56,7 +56,7 @@ const Home = ({ theme, toggle }) => {
         return null;
     };
     return (
-        <div>
+        <div className="background-image">
             <MainPageLayout theme={theme} toggle={toggle}>
                 <SearchInput
                     type="text"
@@ -84,7 +84,11 @@ const Home = ({ theme, toggle }) => {
                     />
                 </RadioInputsWrapper>
                 <SearchButtonWrapper>
-                    <button type="button" onClick={onSearch} className = {theme?'light':'dark-theme'}>
+                    <button
+                        type="button"
+                        onClick={onSearch}
+                        className={theme ? 'light' : 'dark-theme'}
+                    >
                         Search
                     </button>
                 </SearchButtonWrapper>

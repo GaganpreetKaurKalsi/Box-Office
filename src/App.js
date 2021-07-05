@@ -24,7 +24,7 @@ function App() {
     const [themePage, toggle] = useTheme();
 
     return (
-        <div>
+        <div className = {themePage?'light':'dark-theme-background'}>
             <ThemeProvider theme={theme}>
                 <Switch>
                     <Route exact path="/">

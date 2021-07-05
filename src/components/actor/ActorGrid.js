@@ -3,9 +3,10 @@ import ActorCard from './ActorCard';
 import IMAGE_NOT_FOUND from '../../images/not-found.png'
 import { FlexGrid } from '../styled';
 
-const ActorGrid = ({data, theme}) => {
+const ActorGrid = ({ data, theme }) => {
+    const setTheme = theme ? 'light-theme' : 'dark-theme';
     return (
-        <FlexGrid>
+        <FlexGrid className={setTheme}>
             {data.map(({ person }) => (
                 <ActorCard
                     key={person.id}
@@ -14,9 +15,9 @@ const ActorGrid = ({data, theme}) => {
                     country={person.country ? person.country.name : null}
                     birthday={person.birthday}
                     deathday={person.deathday}
-                    gender = {person.gender}
+                    gender={person.gender}
                     image={person.image ? person.image.medium : IMAGE_NOT_FOUND}
-                    theme = {theme?'light':'dark-theme'}
+                    theme={theme ? 'light' : 'dark-theme'}
                 />
             ))}
         </FlexGrid>

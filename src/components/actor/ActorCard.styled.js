@@ -7,4 +7,7 @@ export const StyledActorCard = styled(SearchCards)`
         margin-top: 15px;
         font-weight: bold;
     }
+    .info.dark-theme {
+        color: ${({ theme }) => theme.mainColors.gray};
+    }
 `;

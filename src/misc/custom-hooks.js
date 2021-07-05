@@ -89,8 +89,10 @@ export function useTheme() {
     // const state = currentTheme !== null ? currentTheme : "true"
     // localStorage.setItem('theme', state);
 
-    const [theme, setTheme] = useState(true);
-    // console.log(theme)
+    const [theme, setTheme] = useState(() => {
+        const persistedTheme = localStorage.getItem("theme");
+        return persistedTheme ? JSON.parse(persistedTheme) : 'true';
+    });
 
     const toggle = () => {
         localStorage.setItem("theme", !theme)

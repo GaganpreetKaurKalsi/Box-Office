@@ -5,7 +5,8 @@ export const NavList = styled.ul`
     display: flex;
     justify-content: center;
     list-style: none;
-    margin: 0 0 30px;
+    margin: 0 0 20px;
+    margin-bottom : 70px;
     padding: 0;
 `;
 

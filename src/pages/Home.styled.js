@@ -31,7 +31,8 @@ export const RadioInputsWrapper = styled.div`
 
 export const SearchButtonWrapper = styled.div`
     text-align: center;
-    margin-bottom: 35px;
+    margin-bottom: 60px;
+    margin-top : 30px;
 
     button {
         color: ${({ theme }) => theme.mainColors.blue};
