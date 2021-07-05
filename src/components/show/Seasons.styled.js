@@ -11,27 +11,34 @@ export const SeasonsWrapper = styled.div`
 `;
 
 export const SeasonList = styled.div`
-  display: flex;
-  flex-direction: column;
-
-  .season-item {
     display: flex;
-    align-items: center;
-    margin: 10px 0;
+    flex-direction: column;
+    margin-top : 20px;
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+    .season-item {
+        display: flex;
+        align-items: center;
+        margin: 10px 0;
 
-    .left {
-      flex: 0 0 30%;
-      border-right: 1px solid #b0b0b0;
-      padding-right: 20px;
-    }
+        &:last-child {
+            margin-bottom: 0;
+        }
 
-    .right {
-      padding-left: 20px;
-      flex: 1;
+        .left {
+            flex: 0 0 30%;
+            border-right: 1px solid #b0b0b0;
+            padding-right: 20px;
+            &.dark-theme p {
+                color: ${({ theme }) => theme.mainColors.coolgray};
+            }
+        }
+
+        .right {
+            padding-left: 20px;
+            flex: 1;
+            &.dark-theme span {
+                color: ${({ theme }) => theme.mainColors.coolgray};
+            }
+        }
     }
-  }
 `;

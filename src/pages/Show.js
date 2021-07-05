@@ -8,26 +8,29 @@ import Seasons from '../components/show/Seasons';
 import { ShowPageWrapper, InfoBlock } from './Show.styled';
 import { useShow } from '../misc/custom-hooks';
 
-const Show = () => {
+const Show = ({theme}) => {
     const { id } = useParams();
 
     const { show, isLoading, error } = useShow(id);
+    const setTheme = theme ? 'light' : 'dark-theme'
 
     if (isLoading) {
-        return <div>Data is being loaded</div>;
+        return <div className="loader">Data is being loaded</div>;
     }
 
     if (error) {
-        return <div>Error occured : {error}</div>;
+        return <div className="loader">Error occured : {error}</div>;
     }
     return (
-        <ShowPageWrapper>
+        <ShowPageWrapper className={setTheme}>
             <ShowMainData
                 image={show.image}
                 name={show.name}
                 rating={show.rating}
                 summary={show.summary}
                 tags={show.genres}
+                theme={setTheme}
+                className={setTheme}
             />
             <InfoBlock>
                 <h2>Details</h2>
@@ -35,15 +38,16 @@ const Show = () => {
                     status={show.status}
                     network={show.network}
                     premiered={show.premiered}
+                    theme={setTheme}
                 />
             </InfoBlock>
-            <div>
+            <div className = "seasons-div">
                 <h2>Seasons</h2>
-                <Seasons seasons={show._embedded.seasons} />
+                <Seasons seasons={show._embedded.seasons} theme={setTheme} />
             </div>
-            <div>
+            <div className = "cast-div">
                 <h2>Cast</h2>
-                <Cast cast={show._embedded.cast} />
+                <Cast cast={show._embedded.cast} theme={setTheme} />
             </div>
         </ShowPageWrapper>
     );

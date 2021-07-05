@@ -1,8 +1,18 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const ShowPageWrapper = styled.div`
     padding: 0 20px;
-    margin-top : 30px;
+
+    .seasons-div, .cast-div {
+        margin-top: 60px;
+    }
+    .seasons-div h2, .cast-div h2 {
+        margin-bottom: 30px;
+    }
+    &.dark-theme {
+        color: white;
+        background-color: ${({ theme }) => theme.mainColors.darktheme};
+    }
 
     @media only screen and (min-width: 516px) {
         padding: 0 40px;
@@ -18,7 +28,7 @@ export const ShowPageWrapper = styled.div`
 `;
 
 export const InfoBlock = styled.div`
-    margin-bottom: 40px;
+    margin-top: 60px;
     h2 {
         margin: 0;
         margin-bottom: 30px;

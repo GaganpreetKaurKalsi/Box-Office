@@ -10,7 +10,7 @@ const RadioWrapper = styled.label`
     user-select: none;
     font-weight: 700;
     line-height: 1.65;
-    margin : 0 15px;
+    margin: 0 15px;
 
     input {
         position: absolute;
@@ -27,11 +27,19 @@ const RadioWrapper = styled.label`
         background-color: #fff;
         border: 2px solid ${({ theme }) => theme.mainColors.blue};
         border-radius: 50%;
+        &.dark-theme {
+            /* border: 2px solid ${({ theme }) =>
+                theme.mainColors.darkthemeblue}; */
+            border: 2px solid ${({ theme }) => theme.mainColors.lightgray};
+        }
     }
 
     input:checked ~ span {
         background-color: #fff;
         border: 2px solid ${({ theme }) => theme.mainColors.blue};
+    }
+    input.dark-theme:checked ~ span {
+        border: 2px solid ${({ theme }) => theme.mainColors.lightgray};
     }
 
     span:after {
@@ -52,15 +60,19 @@ const RadioWrapper = styled.label`
         border-radius: 50%;
         background: ${({ theme }) => theme.mainColors.blue};
     }
+    span.dark-theme:after {
+        background: ${({ theme }) => theme.mainColors.darkthemeblue};
+    }
 `;
 
-const CustomRadio = ({label, ...restProps}) => {
+const CustomRadio = ({ theme, label, ...restProps }) => {
+    const setTheme = theme ? 'light':'dark-theme'
     return (
-            <RadioWrapper htmlFor={restProps.id}>
-                {label}
-            <input {...restProps} type="radio" />
-            <span/>
-            </RadioWrapper>
+        <RadioWrapper htmlFor={restProps.id}>
+            {label}
+            <input {...restProps} type="radio" className={setTheme} />
+            <span className={setTheme} />
+        </RadioWrapper>
     );
 }
 

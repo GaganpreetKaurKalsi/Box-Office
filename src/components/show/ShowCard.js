@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { StyledShowCards } from './ShowCard.styled';
 import { Star } from '../styled';
 
-const ShowCard = ({ id, name, image, summary, onStarClick, active }) => {
+const ShowCard = ({ id, name, image, summary, onStarClick, active , theme}) => {
     const summaryAsText = summary
         ? `${summary
               .split(' ')
@@ -12,19 +12,23 @@ const ShowCard = ({ id, name, image, summary, onStarClick, active }) => {
               .replace(/<.+?>/g, '')}...`
         : 'No Description';
     
-    return <StyledShowCards>
-        <div className="img-wrapper">
-            <img src={image} alt="show" className = "img"/>
-        </div>
-        <h1>{name}</h1>
-        <p>{summaryAsText}</p>
-        <div className = "btns">
-            <Link to={`/show/${id}`}>Read more</Link>
-            <button type="button" onClick={onStarClick}>
-                <Star active={active}/>
-            </button>
-        </div>
-    </StyledShowCards>;
+    return (
+        <StyledShowCards>
+            <div className="img-wrapper">
+                <img src={image} alt="show" className="img" />
+            </div>
+            <h1>{name}</h1>
+            <p className={theme}>{summaryAsText}</p>
+            <div className={`btns ${theme}`}>
+                <Link to={`/show/${id}`} className={theme}>
+                    Read more
+                </Link>
+                <button type="button" onClick={onStarClick} className={theme}>
+                    <Star active={active}/>
+                </button>
+            </div>
+        </StyledShowCards>
+    );
 };
 
 export default ShowCard;

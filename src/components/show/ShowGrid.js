@@ -6,11 +6,11 @@ import IMAGE_NOT_FOUND from '../../images/not-found.png';
 import { FlexGrid } from '../styled';
 import { useShows } from '../../misc/custom-hooks';
 
-const ShowGrid = ({ data }) => {
+const ShowGrid = ({ data, theme }) => {
     const [starredShows, dispatchStarred] = useShows();
-
+    const setTheme = theme ? 'light-theme' : 'dark-theme'
     return (
-        <FlexGrid>
+        <FlexGrid className = {setTheme}>
 
             {
                 data.map(({ show }) => {
@@ -33,6 +33,7 @@ const ShowGrid = ({ data }) => {
                         summary={show.summary}
                         onStarClick={onStarClick}
                         active={isStarred ? 'active' : ''}
+                        theme = {setTheme}
                     />
                 );
             })}

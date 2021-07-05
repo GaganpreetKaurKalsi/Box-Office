@@ -7,14 +7,13 @@ import ShowGrid from '../components/show/ShowGrid';
 import MainPageLayout from '../components/MainPageLayout'
 import { useShows } from '../misc/custom-hooks';
 
-const Starred = () => {
+const Starred = ({theme, toggle}) => {
     const [starred] = useShows()
     const [shows, setShows] = useState(null);
     const [isLoading, setIsLoading] = useState(true);
     const [error, setError] = useState(null)
-
+    console.log("From inside Starred : ", theme)
     useEffect(() => {
-        console.log("HIII")
         if (starred && starred.length > 0) {
             const promises = starred.map(id => apiGet(`/shows/${id}`));
             Promise.all(promises)
@@ -35,11 +34,11 @@ const Starred = () => {
     }, [starred])
     return (
         <div>
-            <MainPageLayout>
-                {isLoading && <div>Shows are still loading</div>}
-                {error && <div>Error occured : {error}</div>}
-                {!isLoading && !shows && <div>No shows are starred</div>}
-                {!isLoading && shows && !error && <ShowGrid data={shows} />}
+            <MainPageLayout theme={theme} toggle={toggle}>
+                {isLoading && <div className = "loader">Shows are still loading</div>}
+                {error && <div className="loader">Error occured ( {error} )</div>}
+                {!isLoading && !shows && <div className="loader">No shows are starred</div>}
+                {!isLoading && shows && !error && <ShowGrid data={shows} theme={theme}/>}
             </MainPageLayout>
         </div>
     );

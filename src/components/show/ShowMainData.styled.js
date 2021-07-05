@@ -1,8 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const MainDataWrapper = styled.div`
     display: flex;
     margin-bottom: 40px;
+    padding-top: 40px;
 
     img {
         min-width: 250px;
@@ -17,9 +18,50 @@ export const MainDataWrapper = styled.div`
         .summary {
             color: #5f5f5f;
             line-height: 1.5;
+            &.dark-theme {
+                color: ${({ theme }) => theme.mainColors.gray};
+            }
         }
     }
 
+    .back-btn {
+        height: 30px;
+        width: 80px;
+        border-radius: 20px;
+        outline: none;
+        border: 1px solid ${({ theme }) => theme.mainColors.blue};
+        background-color: white;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        a {
+            text-decoration: none;
+            color: ${({ theme }) => theme.mainColors.blue};
+        }
+        &:hover {
+            border: 1px solid ${({ theme }) => theme.mainColors.blue};
+            background-color: ${({ theme }) => theme.mainColors.blue};
+            a {
+                color: ${({ theme }) => theme.mainColors.white};
+            }
+        }
+        &.dark-theme {
+            border: 1px solid ${({ theme }) => theme.mainColors.white};
+            background-color: ${({ theme }) => theme.mainColors.darktheme};
+            a {
+                color: ${({ theme }) => theme.mainColors.white};
+            }
+            &:hover {
+                border: 1px solid ${({ theme }) => theme.mainColors.white};
+                background-color: ${({ theme }) => theme.mainColors.white};
+                a {
+                    color: ${({ theme }) => theme.mainColors.darkthemeblue};
+                }
+            }
+        }
+    }
+
+    /* 20310 */
     @media only screen and (max-width: 768px) {
         flex-wrap: wrap;
         img {

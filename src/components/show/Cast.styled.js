@@ -9,7 +9,6 @@ export const CastList = styled.div`
         display: flex;
         margin-bottom: 20px;
         align-items: center;
-
         @media only screen and (max-width: 768px) {
             flex: 1 0 100%;
         }
@@ -30,7 +29,9 @@ export const CastList = styled.div`
 
     .actor {
         margin-left: 25px;
-
+        &.dark-theme {
+            color: ${({ theme }) => theme.mainColors.coolgray};
+        }
         .bold {
             font-weight: bold;
         }

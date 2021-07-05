@@ -2,7 +2,7 @@ import React from 'react'
 import IMG_PLACEHOLDER from '../../images/not-found.png';
 import { CastList } from './Cast.styled';
 
-const Cast = ({ cast }) => {
+const Cast = ({ cast, theme }) => {
   return (
       <CastList>
           {cast.map(({ person, character, voice }, key) => (
@@ -17,7 +17,7 @@ const Cast = ({ cast }) => {
                           alt="cast-person"
                       />
                   </div>
-                  <div className="actor">
+                  <div className={`actor ${theme}`}>
                       <span>
                           <span className = "bold">{person.name}</span>| {character.name}{' '}
                           {voice ? '| Voice' : ''}

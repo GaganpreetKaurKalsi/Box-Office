@@ -1,11 +1,16 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import IMG_PLACEHOLDER from '../../images/not-found.png';
 import { Star } from '../styled';
 import { MainDataWrapper, Headline, TagList } from './ShowMainData.styled';
 
-const ShowMainData = ({ name, rating, summary, tags, image }) => {
+
+const ShowMainData = ({ name, rating, summary, tags, image, className }) => {
     return (
-        <MainDataWrapper>
+        <MainDataWrapper className={className}>
+            <button type="button" className={`back-btn ${className}`}>
+                <Link to='/'>Back</Link>
+            </button>
             <img
                 src={image ? image.original : IMG_PLACEHOLDER}
                 alt="show-cover"
@@ -14,13 +19,13 @@ const ShowMainData = ({ name, rating, summary, tags, image }) => {
                 <Headline>
                     <h1>{name}</h1>
                     <div>
-                        <Star active='active'/>
+                        <Star active="active" />
                         <span>{rating.average || 'N/A'}</span>
                     </div>
                 </Headline>
                 <div
                     dangerouslySetInnerHTML={{ __html: summary }}
-                    className="summary"
+                    className={`summary ${className}`}
                 />
 
                 <TagList>

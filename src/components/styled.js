@@ -5,6 +5,9 @@ export const FlexGrid = styled(FadeIn)`
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    &.dark-theme {
+        background-color: ${({ theme }) => theme.mainColors.darktheme};
+    }
 `;
 
 export const SearchCards = styled.div`
@@ -12,9 +15,9 @@ export const SearchCards = styled.div`
     height: 100%;
     margin: 0px 15px 40px;
     .img-wrapper {
-        width: 100%;
+        width: 98%;
         border-radius: 40px;
-        height: 420px;
+        height: 400px;
         overflow: hidden;
         border: 1px solid #ddd;
     }

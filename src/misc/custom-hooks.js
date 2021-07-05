@@ -82,3 +82,20 @@ export function useShow(showId) {
     }, [showId]);
     return state;
 }
+
+export function useTheme() {
+
+    // const currentTheme = localStorage.getItem('theme');
+    // const state = currentTheme !== null ? currentTheme : "true"
+    // localStorage.setItem('theme', state);
+
+    const [theme, setTheme] = useState(true);
+    // console.log(theme)
+
+    const toggle = () => {
+        localStorage.setItem("theme", !theme)
+        setTheme(!theme);
+    };
+
+    return [theme, toggle]
+}

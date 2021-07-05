@@ -1,13 +1,14 @@
 import React from 'react'
 import { TitleWrapper } from './Title.styled'
 
-const Title = ({title, subtitle}) => {
+const Title = ({ title, subtitle, theme }) => {
+                console.log('Inside Title', theme);
     return (
         <TitleWrapper>
-            <h1>{title}</h1>
-            <p>{subtitle}</p>
+            <h1 className={theme}>{title}</h1>
+            <p className={theme}>{subtitle}</p>
         </TitleWrapper>
-    )
+    );
 }
 
 export default Title

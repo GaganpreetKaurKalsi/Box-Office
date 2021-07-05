@@ -7,5 +7,8 @@ export const DetailsWrapper = styled.div`
         span {
             font-weight: bold;
         }
+        &.dark-theme {
+            color: ${({ theme }) => theme.mainColors.coolgray};
+        }
     }
 `;

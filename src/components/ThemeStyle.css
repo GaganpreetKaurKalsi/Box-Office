@@ -1,0 +1,65 @@
+#clr10 {
+    border-radius: 100px;
+    /* width: 30px;
+    height: 5px;
+    padding: 10px 10px; */
+    width: 56px;
+    height: 18px;
+    padding: 3px 0px;
+    font-size: 18px;
+    top: 30px;
+    background-color: #6b7280;
+    line-height: 1;
+}
+.span {
+    right: 30px;
+    border-radius: 45%;
+    padding: 10px;
+    margin: auto;
+    position: absolute;
+    width: 90px;
+    height: 60px;
+    background-color: var(--theme2);
+    cursor: pointer;
+    /* box-shadow: rgb(50 50 93 / 25%) 0px 20px 20px -30px inset, rgb(0 0 0 / 30%) 0px 10px 15px -10px inset; */
+}
+#sampleDiv {
+    position: relative;
+    text-align: center;
+    box-shadow: none;
+    height: 100px;
+}
+#btn4 {
+    top: 5px;
+    height: 40px;
+    right: 4px;
+}
+.button {
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    right: 0px;
+    top: 0px;
+    background-color: white;
+    cursor: pointer;
+    /* left: 0; */
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    box-shadow: rgb(50 50 93 / 25%) 0px 2px 5px -1px,
+        rgb(0 0 0 / 30%) 0px 1px 3px -1px;
+}
+.button:hover,
+.button:focus {
+    box-shadow: rgb(56 191 248 / 36%) 0px 2px 4px 0px, rgb(56 191 248) 0px 2px 16px 0px;
+    border : 1px solid rgb(56 191 248 / 36%)
+}
+.light .button{
+    right : unset;
+    left : 0px;
+}
+.dark-theme .button{
+    right : 0px;
+    left : unset;
+}
