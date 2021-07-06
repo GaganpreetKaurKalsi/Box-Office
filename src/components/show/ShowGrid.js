@@ -5,7 +5,7 @@ import React, {useCallback, memo} from 'react';
 import ShowCard from './ShowCard';
 import IMAGE_NOT_FOUND from '../../images/not-found.png';
 import { FlexGrid } from '../styled';
-import { useShows, useWhyDidYouUpdate } from '../../misc/custom-hooks';
+import { useShows} from '../../misc/custom-hooks';
 
 const ShowGrid = ({ data, theme }) => {
     const [starredShows, dispatchStarred] = useShows();
@@ -25,7 +25,6 @@ const ShowGrid = ({ data, theme }) => {
                         dispatchStarred({ type: 'ADD', showId: show.id });
                     }
                 }, [isStarred, show.id]);
-                    useWhyDidYouUpdate('theme ShowGrid', { onStarClick, isStarred, setTheme });
                 return (
                     <ShowCard
                         key={show.id}

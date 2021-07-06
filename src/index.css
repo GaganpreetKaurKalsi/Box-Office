@@ -44,3 +44,8 @@ code {
     font-style: italic;
     margin-top: 40px;
 }
+
+div.loader.dark-theme{
+    color : black;
+    background-color : white; 
+}

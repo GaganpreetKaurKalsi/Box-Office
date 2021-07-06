@@ -7,6 +7,7 @@ import Cast from '../components/show/Cast';
 import Seasons from '../components/show/Seasons';
 import { ShowPageWrapper, InfoBlock } from './Show.styled';
 import { useShow } from '../misc/custom-hooks';
+import '../index.css'
 
 const Show = ({theme}) => {
     const { id } = useParams();
@@ -15,11 +16,13 @@ const Show = ({theme}) => {
     const setTheme = theme ? 'light' : 'dark-theme'
 
     if (isLoading) {
-        return <div className="loader">Data is being loaded</div>;
+        return <div className={`loader ${setTheme}`
+    }>Data is being loaded</div>;
     }
 
     if (error) {
-        return <div className="loader">Error occured : {error}</div>;
+        return <div className={`loader ${setTheme}`
+    }>Error occured : {error}</div>;
     }
     return (
         <ShowPageWrapper className={setTheme}>
