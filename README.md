@@ -8,7 +8,9 @@
 ![GitHub forks](https://img.shields.io/github/forks/GaganpreetKaurKalsi/React-TIC-TAC-TOE?style=social)
 ![GitHub Repo stars](https://img.shields.io/github/stars/GaganpreetKaurKalsi/React-TIC-TAC-TOE?style=social)
 
-![image](https://user-images.githubusercontent.com/54144759/124593124-e3418e00-de7b-11eb-823e-951d9a57e10c.png)
+
+![image](https://user-images.githubusercontent.com/54144759/124658159-0fcbc900-dec1-11eb-991b-8c524a42e807.png)
+
 <p align = "center"><b>Box-Office app made in REACT with theme</b></p>
 <br>
 
