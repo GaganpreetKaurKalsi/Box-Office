@@ -12,6 +12,10 @@ body {
     background-size: cover;
 }
 
+::selection{
+    outline : none;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
         monospace;
@@ -23,7 +27,9 @@ code {
 }
 .dark-theme-background {
     background-color: #18191b;
+    background-color: #000000;
     /* background-color: #18191be8; */
+    
 }
 .dark-theme-background .background-image {
     background-image: url('./images/background.png');

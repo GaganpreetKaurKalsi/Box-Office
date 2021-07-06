@@ -93,10 +93,6 @@ export function useShow(showId) {
 }
 
 export function useTheme() {
-    // const currentTheme = localStorage.getItem('theme');
-    // const state = currentTheme !== null ? currentTheme : "true"
-    // localStorage.setItem('theme', state);
-
     const [theme, setTheme] = useState(() => {
         const persistedTheme = localStorage.getItem('theme');
         return persistedTheme ? JSON.parse(persistedTheme) : 'true';

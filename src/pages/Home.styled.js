@@ -32,10 +32,11 @@ export const RadioInputsWrapper = styled.div`
 export const SearchButtonWrapper = styled.div`
     text-align: center;
     margin-bottom: 60px;
-    margin-top : 30px;
+    margin-top: 30px;
 
     button {
         color: ${({ theme }) => theme.mainColors.blue};
+        background-color: ${({ theme }) => theme.mainColors.white};
         margin: auto;
         padding: 10px 50px;
         font-size: 15px;
@@ -51,7 +52,7 @@ export const SearchButtonWrapper = styled.div`
         &.dark-theme {
             color: ${({ theme }) => theme.mainColors.darkthemeblue};
             border: 1px solid ${({ theme }) => theme.mainColors.darkthemeblue};
-            background-color: #18181b;
+            background-color: ${({ theme }) => theme.mainColors.darktheme};
         }
         &.dark-theme:hover {
             background-color: white;
