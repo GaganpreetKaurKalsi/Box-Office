@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/rules-of-hooks */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-undef */
-import React from 'react';
+import React, {useCallback, memo} from 'react';
 import ShowCard from './ShowCard';
 import IMAGE_NOT_FOUND from '../../images/not-found.png';
 import { FlexGrid } from '../styled';
-import { useShows } from '../../misc/custom-hooks';
+import { useShows, useWhyDidYouUpdate } from '../../misc/custom-hooks';
 
 const ShowGrid = ({ data, theme }) => {
     const [starredShows, dispatchStarred] = useShows();
@@ -14,16 +15,17 @@ const ShowGrid = ({ data, theme }) => {
 
             {
                 data.map(({ show }) => {
-                    console.log(show)
+                    // console.log(show)
                 const isStarred = starredShows.includes(show.id);
 
-                const onStarClick = () => {
+                const onStarClick = useCallback(() => {
                     if (isStarred) {
                         dispatchStarred({ type: 'REMOVE', showId: show.id });
                     } else {
                         dispatchStarred({ type: 'ADD', showId: show.id });
                     }
-                };
+                }, [isStarred, show.id]);
+                    useWhyDidYouUpdate('theme ShowGrid', { onStarClick, isStarred, setTheme });
                 return (
                     <ShowCard
                         key={show.id}
@@ -41,4 +43,4 @@ const ShowGrid = ({ data, theme }) => {
     );
 };
 
-export default ShowGrid;
+export default memo(ShowGrid);

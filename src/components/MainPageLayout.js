@@ -5,7 +5,7 @@ import Theme from './Theme'
 
 
 const MainPageLayout = ({ theme, toggle, children }) => {
-    console.log("theme from Inside Main page Layout : ", theme)
+
     return (
         <div className={!theme ? 'dark-theme' : 'light'} style={{ height: window.innerHeight }}>
             <Theme onClick={toggle} theme={theme} />

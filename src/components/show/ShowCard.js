@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { Link } from 'react-router-dom';
 import { StyledShowCards } from './ShowCard.styled';
 import { Star } from '../styled';
 
-const ShowCard = ({ id, name, image, summary, onStarClick, active , theme}) => {
+const ShowCard = ({ id, name, image, summary, onStarClick, active, theme }) => {
     const summaryAsText = summary
         ? `${summary
               .split(' ')
@@ -11,7 +11,6 @@ const ShowCard = ({ id, name, image, summary, onStarClick, active , theme}) => {
               .join(' ')
               .replace(/<.+?>/g, '')}...`
         : 'No Description';
-    
     return (
         <StyledShowCards>
             <div className="img-wrapper">
@@ -24,11 +23,11 @@ const ShowCard = ({ id, name, image, summary, onStarClick, active , theme}) => {
                     Read more
                 </Link>
                 <button type="button" onClick={onStarClick} className={theme}>
-                    <Star active={active}/>
+                    <Star active={active} />
                 </button>
             </div>
         </StyledShowCards>
     );
 };
 
-export default ShowCard;
+export default memo(ShowCard);

@@ -4,27 +4,7 @@ import React from 'react';
 import './ThemeStyle.css';
 
 const Theme = ({ onClick, theme }) => {
-    // const currentCode = 1;
-    // function changeSampleTheme(code, left, right) {
 
-    //     if (!theme) {
-    //         document.getElementById('sampleDiv').querySelector(`#btn${code}`).setAttribute('style', left);
-    //         document
-    //             .getElementById('sampleDiv')
-    //             .querySelector(`#btn${code}`)
-    //             .setAttribute('style', 'right:unset;left:0px');
-    //     }
-    //     else {
-    //         document
-    //             .getElementById('sampleDiv')
-    //             .querySelector(`#btn${code}`)
-    //             .setAttribute('style', right);
-    //          document
-    //              .getElementById('sampleDiv')
-    //              .querySelector(`#btn${code}`)
-    //              .setAttribute('style', 'left:unset;right:0px');
-    //     }
-    // }
     return (
         <div>
             <div className="div10 toggle samplediv" id="sampleDiv">

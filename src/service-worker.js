@@ -1,3 +1,5 @@
+/* eslint-disable prefer-template */
+/* eslint-disable no-underscore-dangle */
 /* eslint-disable no-restricted-globals */
 
 // This service worker can be customized!

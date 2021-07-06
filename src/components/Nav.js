@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import { useLocation } from 'react-router-dom'
 import { NavList, LinkStyled } from './Navs.styled';
 
@@ -10,7 +10,6 @@ const Links = [
 const Nav = ({theme}) => {
   const location = useLocation()
   const setTheme = !theme ? 'dark-theme' : 'light'
-  console.log("From Nav", setTheme)
   return (
     <div>
       <nav>
@@ -26,4 +25,4 @@ const Nav = ({theme}) => {
   );
 };
 
-export default Nav;
+export default memo(Nav);
